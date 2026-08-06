@@ -37,11 +37,8 @@ frontend-knowledge-base/
 │   ├── aula-03/
 │   └── ...
 │
-├── projetos/
-│
-├── materiais/
-│
-└── referencias/
+└── projetos/
+
 ```
 
 Cada pasta de aula poderá conter:
