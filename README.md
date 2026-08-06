@@ -27,6 +27,8 @@ frontend-knowledge-base/
 │
 ├── README.md
 │
+├── Plano de Ensino.pdf
+│
 ├── aulas/
 │   ├── aula-01/
 │   │   ├── resumo.md
