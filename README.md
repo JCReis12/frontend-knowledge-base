@@ -17,12 +17,12 @@ O objetivo deste repositório é organizar o conteúdo aprendido durante as aula
 ```text
 frontend-knowledge-base/
 ├── README.md
-├── aula-01/
-│   └── resumo.md
-├── aula-02/
-│   └── resumo.md
-├── aula-03/
-│   └── resumo.md
+├── Aula-01/
+│   └── Aula-01-resumo.md
+├── Aula-02/
+│   └── Aula-02-resumo.md
+├── Aula-03/
+│   └── Aula-03-resumo.md
 └── ...
 ```
 
