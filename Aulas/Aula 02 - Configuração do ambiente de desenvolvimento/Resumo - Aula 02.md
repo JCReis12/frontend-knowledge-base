@@ -46,28 +46,28 @@ Sem um sistema de versionamento, o projeto poderia ficar desorganizado e difíci
 ## Benefícios do Versionamento
 
 - **Trabalho simultâneo**
-  - Vários desenvolvedores podem trabalhar no mesmo projeto.
+   Vários desenvolvedores podem trabalhar no mesmo projeto.
 
-- **Menos retrabalho**
-  - Conflitos podem ser identificados antes de causarem grandes perdas.
+- **Menos retrabalho**  
+    Conflitos podem ser identificados antes de causarem grandes perdas.
 
-- **Auditoria e rastreabilidade**
-  - É possível saber quem alterou determinada parte do projeto, quando e o que foi alterado.
+- **Auditoria e rastreabilidade**  
+    É possível saber quem alterou determinada parte do projeto, quando e o que foi alterado.
 
-- **Recuperação de versões**
-  - Permite retornar para uma versão anterior caso alguma alteração cause problemas.
+- **Recuperação de versões**  
+    Permite retornar para uma versão anterior caso alguma alteração cause problemas.
 
-- **Controle de mudanças**
-  - Facilita a integração das alterações feitas pelos membros da equipe.
+- **Controle de mudanças**  
+    Facilita a integração das alterações feitas pelos membros da equipe.
 
-- **Colaboração**
-  - Permite utilizar branches para desenvolver novas funcionalidades sem afetar diretamente a versão principal.
+- **Colaboração**  
+    Permite utilizar branches para desenvolver novas funcionalidades sem afetar diretamente a versão principal.
 
-- **Qualidade**
-  - Permite testar alterações antes de disponibilizá-las na versão final.
+- **Qualidade**  
+    Permite testar alterações antes de disponibilizá-las na versão final.
 
-- **Aprimoramento contínuo**
-  - O histórico permite acompanhar a evolução do projeto.
+- **Aprimoramento contínuo**  
+    O histórico permite acompanhar a evolução do projeto.
 
 ---
 
@@ -187,29 +187,29 @@ Foi encontrado um erro e ele foi corrigido, sem adicionar uma nova funcionalidad
 
 # Tipos de Alterações no Código
 
-- **Bug Fix**
-  - Correção de erros no código.
+- **Bug Fix**  
+    Correção de erros no código.
 
-- **New Feature**
-  - Adição de uma nova funcionalidade.
+- **New Feature**  
+    Adição de uma nova funcionalidade.
 
 - **Feature Enhancement**
-  - Melhoria de uma funcionalidade existente.
+    Melhoria de uma funcionalidade existente.
 
-- **Refactoring**
-  - Reorganização do código para deixá-lo mais limpo e eficiente, sem necessariamente alterar seu comportamento.
+- **Refactoring**  
+    Reorganização do código para deixá-lo mais limpo e eficiente, sem necessariamente alterar seu comportamento.
 
-- **Performance**
-  - Alterações para melhorar velocidade e eficiência.
+- **Performance**  
+    Alterações para melhorar velocidade e eficiência.
 
-- **Security Patch**
-  - Correção de vulnerabilidades de segurança.
+- **Security Patch**  
+    Correção de vulnerabilidades de segurança.
 
-- **Dependency Update**
-  - Atualização das bibliotecas e frameworks utilizados.
+- **Dependency Update**  
+    Atualização das bibliotecas e frameworks utilizados.
 
-- **Adding Tests**
-  - Adição de testes automatizados para verificar a qualidade do código.
+- **Adding Tests**  
+    Adição de testes automatizados para verificar a qualidade do código.
 
 ---
 
