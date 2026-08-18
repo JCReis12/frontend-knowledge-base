@@ -1,3 +1,5 @@
+# Resumo da aula com minhas anotações
+
 Comparação entre versionamento e backup
 
 caos que conteceria sem versionamento(como perda de código, perda de versões...)
