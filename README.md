@@ -53,59 +53,36 @@ Cada pasta de aula poderá conter:
 
 ---
 
-# 📖 Cronograma da Disciplina
+# 🚀 Projetos da Disciplina
 
-| Aula | Conteúdo                                                | Status |
-| ---: | ------------------------------------------------------- | :----: |
-|   01 | Apresentação da Disciplina e Ecossistema Front-end      |    ✅   |
-|   02 | Configuração do Ambiente de Desenvolvimento             |    ⏳   |
-|   03 | Responsividade e Ferramentas do Desenvolvedor           |    ⏳   |
-|   04 | Frameworks CSS                                          |    ⏳   |
-|   05 | Projeto Integrador (PII) – Planejamento da Interface    |    ⏳   |
-|   06 | Introdução aos Frameworks Front-end                     |    ⏳   |
-|   07 | Estrutura de um Projeto Front-end                       |    ⏳   |
-|   08 | Componentes e Propriedades                              |    ⏳   |
-|   09 | Projeto Integrador (PII) – Desenvolvimento da Interface |    ⏳   |
-|   10 | Estados e Eventos                                       |    ⏳   |
-|   11 | Rotas e Navegação                                       |    ⏳   |
-|   12 | Autoavaliação Institucional                             |    ⏳   |
-|   13 | Projeto Integrador (PII) – Integração dos Componentes   |    ⏳   |
-|   14 | Boas Práticas no Desenvolvimento Front-end              |    ⏳   |
-|   15 | Avaliação Integradora                                   |    ⏳   |
-|   16 | Publicação e Deploy de Aplicações                       |    ⏳   |
-|   17 | Preparação das Apresentações do Projeto                 |    ⏳   |
-|   18 | Bancas do Projeto Integrador e Autoavaliação Discente   |    ⏳   |
-|   19 | Tendências em Desenvolvimento Front-end                 |    ⏳   |
-|   20 | Revisão Geral e Encerramento da Disciplina              |    ⏳   |
+Repositórios dos projetos práticos desenvolvidos ao longo da matéria.
 
-> **Legenda**
->
-> * ✅ Concluído
-> * 🚧 Em desenvolvimento
-> * ⏳ Pendente
+| # | Aula | Projeto | Repositório | Deploy | Tecnologia |
+| ---: | --- | --- | --- | --- | --- |
+| 01 | Aula 01 | `vannila.js` | [🔗 Repositório](https://github.com/Arthur-2612/vannila.js) | [🌐 Ver online](https://vannila-js.vercel.app/) | CSS / JavaScript |
+| 02 | Aula 02 | `projeto-react` | [🔗 Repositório](https://github.com/Arthur-2612/projeto-react) | [🌐 Ver online](https://projeto-react-red-six.vercel.app/) | React |
+| 03 | Aula 03 | `quiz_react` | [🔗 Repositório](https://github.com/Arthur-2612/quiz_react) | [🌐 Ver online](https://quiz-react-jet-nine.vercel.app/) | React |
+| 04 | Aula 03 | `vue-project` | [🔗 Repositório](https://github.com/Arthur-2612/vue-project) | [🌐 Ver online](https://vue-project-blwnxgo6x-arthur-033b.vercel.app/) | Vue.js |
+| 05 | Aula 03 | `meu-app-angular` | [🔗 Repositório](https://github.com/Arthur-2612/meu-app-angular) | [🌐 Ver online](https://meu-app-angular.vercel.app/) | Angular |
+| 06 | Aula 03 | `meu-projeto-nextjs` | [🔗 Repositório](https://github.com/Arthur-2612/meu-projeto-nextjs) | [🌐 Ver online](https://meu-projeto-nextjs-hujmth3h6-arthur-033b.vercel.app/) | Next.js |
+| 07 | Aula 04 | `Projetos_API` | [🔗 Repositório](https://github.com/Arthur-2612/Projetos_API) | — | React / Node.js (Express) |
+
+> O repositório `Projetos_API` reúne projetos conectados a APIs relacionadas aos temas dos projetos desenvolvidos com React, Next.js, Angular e Vue.js.
 
 ---
 
 # 🛠️ Tecnologias Estudadas
 
-Ao longo da disciplina serão abordadas tecnologias e ferramentas como:
-
-* HTML5
-* CSS3
-* JavaScript (Vanilla JS)
-* Git
-* GitHub
-* Vercel
-* Frameworks CSS
+* HTML
+* CSS
+* JavaScript
 * React
 * Vue.js
 * Angular
-* Componentização
-* Estados e Eventos
-* Rotas
-* Consumo de APIs
-* Boas Práticas de Desenvolvimento
-* Deploy de Aplicações
+* Next.js
+* Node.js / Express
+* Git & GitHub
+* Vercel
 
 ---
 
