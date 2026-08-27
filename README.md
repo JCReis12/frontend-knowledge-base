@@ -59,15 +59,14 @@ Repositórios dos projetos práticos desenvolvidos ao longo da matéria.
 
 | # | Aula | Projeto | Repositório | Deploy | Tecnologia |
 | ---: | --- | --- | --- | --- | --- |
-| 01 | Aula 01 | `vannila.js` | [🔗 Repositório](https://github.com/Arthur-2612/vannila.js) | [🌐 Ver online](https://vannila-js.vercel.app/) | CSS / JavaScript |
-| 02 | Aula 02 | `projeto-react` | [🔗 Repositório](https://github.com/Arthur-2612/projeto-react) | [🌐 Ver online](https://projeto-react-red-six.vercel.app/) | React |
-| 03 | Aula 03 | `quiz_react` | [🔗 Repositório](https://github.com/Arthur-2612/quiz_react) | [🌐 Ver online](https://quiz-react-jet-nine.vercel.app/) | React |
-| 04 | Aula 03 | `vue-project` | [🔗 Repositório](https://github.com/Arthur-2612/vue-project) | [🌐 Ver online](https://vue-project-blwnxgo6x-arthur-033b.vercel.app/) | Vue.js |
-| 05 | Aula 03 | `meu-app-angular` | [🔗 Repositório](https://github.com/Arthur-2612/meu-app-angular) | [🌐 Ver online](https://meu-app-angular.vercel.app/) | Angular |
-| 06 | Aula 03 | `meu-projeto-nextjs` | [🔗 Repositório](https://github.com/Arthur-2612/meu-projeto-nextjs) | [🌐 Ver online](https://meu-projeto-nextjs-hujmth3h6-arthur-033b.vercel.app/) | Next.js |
-| 07 | Aula 04 | `Projetos_API` | [🔗 Repositório](https://github.com/Arthur-2612/Projetos_API) | — | React / Node.js (Express) |
+| 01 | Aula 01 | `senai-arcade-space-vanilla` | [🔗 Repositório](https://github.com/JCReis12/senai-arcade-space-vanilla) | — | HTML / CSS / JavaScript |
+| 02 | Aula 02 | `react-first-college-project` | [🔗 Repositório](https://github.com/JCReis12/react-first-college-project) | — | React |
+| 03 | Aula 03 | `angular-fundamentals` | [🔗 Repositório](https://github.com/JCReis12/angular-fundamentals) | — | Angular |
+| 04 | Aula 03 | `nextjs-fundamentals` | [🔗 Repositório](https://github.com/JCReis12/nextjs-fundamentals) | — | Next.js |
+| 05 | Aula 03 | `vue-js-fundamentals` | [🔗 Repositório](https://github.com/JCReis12/vue-js-fundamentals) | — | Vue.js |
+| 06 | Aula 03 | `project-front-fork-senai` | [🔗 Repositório](https://github.com/JCReis12/project-front-fork-senai) | — | HTML / CSS / JavaScript |
 
-> O repositório `Projetos_API` reúne projetos conectados a APIs relacionadas aos temas dos projetos desenvolvidos com React, Next.js, Angular e Vue.js.
+> Os links de deploy serão adicionados quando as aplicações estiverem publicadas online.
 
 ---
 
