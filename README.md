@@ -65,6 +65,8 @@ Repositórios dos projetos práticos desenvolvidos ao longo da matéria.
 | 04 | Aula 03 | `nextjs-fundamentals` | [🔗 Repositório](https://github.com/JCReis12/nextjs-fundamentals) | [🌐 Study Hub \| Seu espaço de estudos](https://nextjs-fundamentals-beta.vercel.app/) | Next.js |
 | 05 | Aula 03 | `vue-js-fundamentals` | [🔗 Repositório](https://github.com/JCReis12/vue-js-fundamentals) | [🌐 Vite App](https://vue-js-fundamentals-t7n5-pkyg36qc5-joao-carlos-reis-developer.vercel.app/) | Vue.js |
 | 06 | Aula 03 | `project-front-fork-senai` | [🔗 Repositório](https://github.com/JCReis12/project-front-fork-senai) | — | HTML / CSS / JavaScript |
+| 07 | Aula 04 | `frontend-full-exemple-project` | [🔗 Repositório](https://github.com/JCReis12/frontend-full-exemple-project) | [🌐 Frontend Full Exemple Project](https://frontend-full-exemple-project.vercel.app/) | React / TypeScript / Vite |
+| 08 | Aula 04 | `backend-full-exemple-project` | [🔗 Repositório](https://github.com/JCReis12/backend-full-exemple-project) | [🌐 Backend Full Exemple Project](https://backend-full-exemple-project.onrender.com/) | Node.js / Express |
 
 > Os links de deploy serão adicionados quando as aplicações estiverem publicadas online.
 
