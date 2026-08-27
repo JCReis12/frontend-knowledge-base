@@ -59,11 +59,11 @@ Repositórios dos projetos práticos desenvolvidos ao longo da matéria.
 
 | # | Aula | Projeto | Repositório | Deploy | Tecnologia |
 | ---: | --- | --- | --- | --- | --- |
-| 01 | Aula 01 | `senai-arcade-space-vanilla` | [🔗 Repositório](https://github.com/JCReis12/senai-arcade-space-vanilla) | — | HTML / CSS / JavaScript |
-| 02 | Aula 02 | `react-first-college-project` | [🔗 Repositório](https://github.com/JCReis12/react-first-college-project) | — | React |
-| 03 | Aula 03 | `angular-fundamentals` | [🔗 Repositório](https://github.com/JCReis12/angular-fundamentals) | — | Angular |
-| 04 | Aula 03 | `nextjs-fundamentals` | [🔗 Repositório](https://github.com/JCReis12/nextjs-fundamentals) | — | Next.js |
-| 05 | Aula 03 | `vue-js-fundamentals` | [🔗 Repositório](https://github.com/JCReis12/vue-js-fundamentals) | — | Vue.js |
+| 01 | Aula 01 | `senai-arcade-space-vanilla` | [🔗 Repositório](https://github.com/JCReis12/senai-arcade-space-vanilla) | [🌐 STAR RAIDERS — Retro Space Shooter](https://senai-arcade-space-vanilla.vercel.app/) | HTML / CSS / JavaScript |
+| 02 | Aula 02 | `react-first-college-project` | [🔗 Repositório](https://github.com/JCReis12/react-first-college-project) | [🌐 React App](https://react-first-college-project.vercel.app/) | React |
+| 03 | Aula 03 | `angular-fundamentals` | [🔗 Repositório](https://github.com/JCReis12/angular-fundamentals) | [🌐 MeuAppAngular](https://angular-fundamentals-chi.vercel.app/dashboard) | Angular |
+| 04 | Aula 03 | `nextjs-fundamentals` | [🔗 Repositório](https://github.com/JCReis12/nextjs-fundamentals) | [🌐 Study Hub | Seu espaço de estudos](https://nextjs-fundamentals-beta.vercel.app/) | Next.js |
+| 05 | Aula 03 | `vue-js-fundamentals` | [🔗 Repositório](https://github.com/JCReis12/vue-js-fundamentals) | [🌐 Vite App](https://vue-js-fundamentals-t7n5-pkyg36qc5-joao-carlos-reis-developer.vercel.app/) | Vue.js |
 | 06 | Aula 03 | `project-front-fork-senai` | [🔗 Repositório](https://github.com/JCReis12/project-front-fork-senai) | — | HTML / CSS / JavaScript |
 
 > Os links de deploy serão adicionados quando as aplicações estiverem publicadas online.
