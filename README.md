@@ -67,6 +67,7 @@ Repositórios dos projetos práticos desenvolvidos ao longo da matéria.
 | 06 | Aula 03 | `project-front-fork-senai` | [🔗 Repositório](https://github.com/JCReis12/project-front-fork-senai) | — | HTML / CSS / JavaScript |
 | 07 | Aula 04 | `frontend-full-exemple-project` | [🔗 Repositório](https://github.com/JCReis12/frontend-full-exemple-project) | [🌐 Frontend Full Exemple Project](https://frontend-full-exemple-project.vercel.app/) | React / TypeScript / Vite |
 | 08 | Aula 04 | `backend-full-exemple-project` | [🔗 Repositório](https://github.com/JCReis12/backend-full-exemple-project) | [🌐 Backend Full Exemple Project](https://backend-full-exemple-project.onrender.com/) | Node.js / Express |
+| 09 | Aula 04 | [Pesquisa - Projetos com API](Aulas/Aula%2004%20-%20Consumindo%20APIs%20no%20front-end/Pesquisa%20-%20Projetos%20com%20API.md) | — | — | Pesquisa |
 
 > Os links de deploy serão adicionados quando as aplicações estiverem publicadas online.
 
