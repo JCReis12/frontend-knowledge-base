@@ -71,6 +71,7 @@ Repositórios dos projetos práticos desenvolvidos ao longo da matéria.
 | 10 | Aula 05 | `exemple-project-api-rest` | [🔗 Frontend](https://github.com/JCReis12/exemple-project-api-rest-frontend.git) · [🔗 Backend](https://github.com/JCReis12/exemple-project-api-rest-backend.git) | [🌐 Frontend](https://exemple-project-api-rest-frontend.vercel.app/) · [🌐 API](https://exemple-project-api-rest-backend.onrender.com) · [📄 Lista de notas](https://exemple-project-api-rest-backend.onrender.com/api/notes) | React / Node.js / Express |
 | 11 | Aula 05 | `exemple-project-api-rest-backend` | [🔗 Repositório](https://github.com/JCReis12/exemple-project-api-rest-backend.git) | [🌐 API pública](https://exemple-project-api-rest-backend.onrender.com) · [📄 Lista de notas](https://exemple-project-api-rest-backend.onrender.com/api/notes) | Node.js / Express |
 | 12 | Aula 06 | `Projeto Integrador` | [📄 Primeiros requisitos e organização](https://2rpnet-my.sharepoint.com/:x:/p/joao_junior/IQAVfcLito34QquhctpNVAPaAcvD_EJHTU2c5fPpm5AMNN8?e=iHIm4A) | — | Excel / Gestão de projetos |
+| 13 | Aula 07 | `aula-framework-css-atv` | [🔗 Repositório](https://github.com/JCReis12/aula-framework-css-atv.git) | — | Framework CSS |
 
 > Os links de deploy serão adicionados quando as aplicações estiverem publicadas online.
 
