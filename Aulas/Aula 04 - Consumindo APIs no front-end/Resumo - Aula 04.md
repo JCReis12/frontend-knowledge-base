@@ -131,3 +131,9 @@ async function carregarDataHora() {
 ```
 
 Em uma aplicação real, apresente estados de carregamento e mensagens de erro compreensíveis, e use a URL pública da API após o deploy em vez do endereço local.
+
+## 8. CORS
+
+**CORS** (*Cross-Origin Resource Sharing*) é um mecanismo de segurança dos navegadores que controla requisições feitas entre origens diferentes. Uma origem é composta por esquema, host e porta; por isso, o front-end e a API executados em endereços diferentes podem precisar que o servidor autorize essa comunicação.
+
+No exemplo, `cors()` adiciona o middleware do Express para configurar essa política. Em aplicações publicadas, restrinja as origens permitidas conforme a necessidade: CORS não substitui autenticação nem autorização e não deve ser tratado como mecanismo para proteger dados sensíveis.
