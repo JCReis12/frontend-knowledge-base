@@ -24,3 +24,15 @@ HTTP é *stateless*: cada requisição deve trazer as informações necessárias
 6. O front-end interpreta o resultado e atualiza a interface ou apresenta uma mensagem.
 
 O front-end não precisa acessar diretamente a implementação interna do servidor: a API funciona como a interface de comunicação entre as partes.
+
+## 3. Métodos HTTP
+
+Os métodos indicam a intenção da requisição em relação a um recurso. O comportamento final depende da implementação da API, mas uma API REST normalmente segue estas convenções:
+
+| Método | Uso comum | Observação |
+| --- | --- | --- |
+| `GET` | Consultar ou recuperar dados. | É seguro (não deve alterar o recurso) e idempotente. |
+| `POST` | Enviar dados ou criar um recurso. | Repetir a requisição pode criar vários recursos; não é idempotente por padrão. |
+| `PUT` | Criar ou substituir por completo um recurso conhecido. | É usado para atualização completa e é idempotente por definição. |
+| `PATCH` | Alterar parcialmente um recurso. | Envia apenas as mudanças desejadas; a idempotência depende da operação definida pela API. |
+| `DELETE` | Remover um recurso. | Repetir a operação mantém o recurso removido; por isso, é idempotente, ainda que a resposta possa variar. |
