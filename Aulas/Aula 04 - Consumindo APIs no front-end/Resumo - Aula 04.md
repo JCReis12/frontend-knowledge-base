@@ -46,3 +46,9 @@ Uma operação é **idempotente** quando repeti-la produz o mesmo estado final n
 Um **endpoint** é um endereço específico pelo qual o cliente acessa um recurso ou uma funcionalidade da API. Em geral, combina a URL/base da API com um caminho; o método HTTP usado também define a ação solicitada. Por exemplo, `GET /usuarios` pode listar usuários, enquanto `POST /usuarios` pode criar um usuário.
 
 Exemplo de endereço: `https://api.exemplo.com/usuarios/42?ativo=true`. Nesse caso, `/usuarios/42` identifica o recurso e `ativo=true` é um parâmetro de consulta. O servidor precisa documentar quais rotas, métodos e formatos de dados aceita.
+
+## 5. JSON
+
+**JSON** (*JavaScript Object Notation*) é um formato leve de texto usado para representar e trocar dados. É fácil de ler por pessoas e pode ser gerado e interpretado por diferentes linguagens; apesar do nome, não é exclusivo de JavaScript. APIs frequentemente usam JSON no corpo das requisições e respostas.
+
+JSON representa dados por meio de **objetos**, organizados em pares nome/valor, e **arrays**, que são listas ordenadas de valores. Também admite strings, números, valores booleanos (`true` e `false`) e `null`, além de objetos e arrays aninhados.
