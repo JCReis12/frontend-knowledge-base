@@ -7,3 +7,9 @@ Este resumo reúne os conceitos de comunicação entre front-end e back-end, API
 **API** (*Application Programming Interface*, ou Interface de Programação de Aplicações) é um conjunto de regras e recursos que permite que componentes ou sistemas diferentes se comuniquem. Ela define como solicitar funcionalidades ou dados sem que o consumidor precise conhecer todos os detalhes internos do sistema que os fornece.
 
 **REST** (*Representational State Transfer*) é um estilo arquitetural usado com frequência para construir APIs web. Uma API REST organiza a comunicação em torno de recursos identificados por URIs, utiliza os métodos HTTP de forma padronizada, troca representações desses recursos (comumente JSON) e mantém as requisições independentes umas das outras (*stateless*). Portanto, API é um conceito amplo; REST é uma das formas de projetar uma API.
+
+## 2. Protocolo HTTP e comunicação cliente-servidor
+
+**HTTP** (*Hypertext Transfer Protocol*) é o protocolo que define como clientes e servidores trocam mensagens na web. O navegador ou aplicação front-end atua como cliente: envia uma requisição a um servidor e aguarda uma resposta. O servidor pode executar regras de negócio, consultar ou atualizar dados e devolver o resultado ao cliente.
+
+HTTP é *stateless*: cada requisição deve trazer as informações necessárias para ser processada, pois o protocolo não pressupõe que o servidor se lembre automaticamente de requisições anteriores. Uma requisição pode incluir método, URL, cabeçalhos e, quando necessário, um corpo com dados; a resposta inclui um código de status, cabeçalhos e, frequentemente, um corpo com os dados ou uma mensagem.
