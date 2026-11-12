@@ -149,3 +149,9 @@ Para o exemplo com `api.js`, uma configuração possível é usar `npm install` 
 A atividade propõe pesquisar dez projetos no GitHub que utilizem APIs, clonar e analisar os repositórios e registrar os resultados em um arquivo Markdown. Para cada projeto, identifique o framework ou as tecnologias do front-end, quais APIs são consumidas e a finalidade de cada integração. Compare como os dados externos ou do back-end são usados pela aplicação.
 
 O levantamento da atividade está organizado em [Pesquisa - Projetos com API](./Pesquisa%20-%20Projetos%20com%20API.md), com uma tabela comparativa e observações sobre os projetos selecionados.
+
+## 11. Atividade 02 — API de data e hora
+
+A segunda atividade propõe criar uma API com Express que disponibilize uma rota para consultar data e hora, publicar o serviço no Render e desenvolver uma aplicação front-end que consuma essa rota e apresente o resultado na tela. A publicação torna a API acessível por uma URL pública, que deve ser usada pelo cliente.
+
+O enunciado também solicita separar front-end e API em repositórios distintos e reunir em um documento evidências do código, da aplicação em funcionamento, dos painéis do Render e da Vercel e os links dos repositórios no GitHub.
