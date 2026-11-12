@@ -159,3 +159,12 @@ O enunciado também solicita separar front-end e API em repositórios distintos 
 ## 12. Interpretando o resultado da requisição
 
 Além do corpo da resposta, verifique o **código de status HTTP** para entender o resultado: códigos `2xx` indicam sucesso; `4xx`, problemas relacionados à requisição ou à autorização do cliente; e `5xx`, falhas durante o processamento no servidor. No `fetch`, uma resposta HTTP de erro não rejeita automaticamente a promessa, por isso é importante testar `response.ok` antes de interpretar o JSON.
+
+## Revisão rápida
+
+- **API:** contrato de comunicação entre sistemas; **REST:** estilo arquitetural comum para APIs web.
+- **HTTP:** protocolo usado para enviar requisições e receber respostas; os métodos comunicam a intenção da operação.
+- **Endpoint:** endereço de acesso a um recurso ou funcionalidade; **JSON:** formato frequente para representar os dados trocados.
+- **Back-end:** processa a lógica e os dados; **Express:** facilita a criação de rotas e servidores Node.js.
+- **CORS:** política do navegador para requisições entre origens; o servidor configura quais origens podem acessar os recursos.
+- **Fluxo completo:** interface solicita → API processa → servidor responde → front-end interpreta e atualiza a tela.
