@@ -137,3 +137,9 @@ Em uma aplicação real, apresente estados de carregamento e mensagens de erro c
 **CORS** (*Cross-Origin Resource Sharing*) é um mecanismo de segurança dos navegadores que controla requisições feitas entre origens diferentes. Uma origem é composta por esquema, host e porta; por isso, o front-end e a API executados em endereços diferentes podem precisar que o servidor autorize essa comunicação.
 
 No exemplo, `cors()` adiciona o middleware do Express para configurar essa política. Em aplicações publicadas, restrinja as origens permitidas conforme a necessidade: CORS não substitui autenticação nem autorização e não deve ser tratado como mecanismo para proteger dados sensíveis.
+
+## 9. Publicação da API no Render
+
+O Render foi apresentado como uma plataforma de hospedagem que integra com repositórios GitHub e pode publicar serviços Node.js. O fluxo trabalhado na aula é: enviar o projeto a um repositório, criar uma conta no Render, escolher **New → Web Service**, conectar o repositório e configurar os comandos de instalação e inicialização de acordo com o projeto.
+
+Para o exemplo com `api.js`, uma configuração possível é usar `npm install` como comando de build e `node api.js` como comando de inicialização. A API deve escutar a porta fornecida pelo ambiente (`process.env.PORT`); depois do deploy, teste a URL pública terminada em `.onrender.com` e o endpoint criado. A aula também destaca deploy conectado ao GitHub e certificado SSL.
