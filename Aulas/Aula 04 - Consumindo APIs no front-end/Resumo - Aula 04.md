@@ -13,3 +13,14 @@ Este resumo reúne os conceitos de comunicação entre front-end e back-end, API
 **HTTP** (*Hypertext Transfer Protocol*) é o protocolo que define como clientes e servidores trocam mensagens na web. O navegador ou aplicação front-end atua como cliente: envia uma requisição a um servidor e aguarda uma resposta. O servidor pode executar regras de negócio, consultar ou atualizar dados e devolver o resultado ao cliente.
 
 HTTP é *stateless*: cada requisição deve trazer as informações necessárias para ser processada, pois o protocolo não pressupõe que o servidor se lembre automaticamente de requisições anteriores. Uma requisição pode incluir método, URL, cabeçalhos e, quando necessário, um corpo com dados; a resposta inclui um código de status, cabeçalhos e, frequentemente, um corpo com os dados ou uma mensagem.
+
+### Fluxo de uma requisição
+
+1. A pessoa interage com a página, por exemplo, clicando em um botão.
+2. O front-end envia uma requisição HTTP para um endpoint.
+3. O servidor recebe a requisição, identifica a rota e executa a lógica necessária.
+4. Se necessário, o servidor consulta um banco de dados ou outro serviço.
+5. O servidor envia uma resposta, muitas vezes em JSON.
+6. O front-end interpreta o resultado e atualiza a interface ou apresenta uma mensagem.
+
+O front-end não precisa acessar diretamente a implementação interna do servidor: a API funciona como a interface de comunicação entre as partes.
