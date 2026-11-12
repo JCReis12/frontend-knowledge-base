@@ -52,3 +52,19 @@ Exemplo de endereço: `https://api.exemplo.com/usuarios/42?ativo=true`. Nesse ca
 **JSON** (*JavaScript Object Notation*) é um formato leve de texto usado para representar e trocar dados. É fácil de ler por pessoas e pode ser gerado e interpretado por diferentes linguagens; apesar do nome, não é exclusivo de JavaScript. APIs frequentemente usam JSON no corpo das requisições e respostas.
 
 JSON representa dados por meio de **objetos**, organizados em pares nome/valor, e **arrays**, que são listas ordenadas de valores. Também admite strings, números, valores booleanos (`true` e `false`) e `null`, além de objetos e arrays aninhados.
+
+Exemplo de resposta JSON:
+
+```json
+{
+  "id": 42,
+  "nome": "Ana",
+  "ativo": true,
+  "interesses": ["front-end", "APIs"],
+  "endereco": {
+    "cidade": "São Paulo"
+  }
+}
+```
+
+Em JSON válido, nomes de propriedades e textos usam aspas duplas; comentários e vírgulas sobrando não são permitidos. Isso é importante ao construir ou interpretar o corpo de uma requisição.
