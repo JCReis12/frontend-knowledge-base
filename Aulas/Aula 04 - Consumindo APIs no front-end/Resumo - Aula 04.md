@@ -80,3 +80,32 @@ Um **Web Service** é um serviço acessível pela web que permite a comunicaçã
 **Express.js** é um framework minimalista e flexível para Node.js que simplifica a criação de servidores web e APIs. Em comparação com o módulo HTTP nativo do Node.js, ele reduz o trabalho necessário para organizar rotas e processar requisições e respostas.
 
 Rotas associam um caminho e um método HTTP a uma ação, como `GET /usuarios`. **Middlewares** são funções executadas durante o processamento da requisição e podem, por exemplo, registrar informações, interpretar dados recebidos, aplicar autenticação ou tratar erros. O Express é adequado para APIs REST e back-ends web; para comunicação em tempo real, WebSockets podem ser mais apropriados, enquanto processamento pesado costuma ser encaminhado a workers.
+
+### Estrutura mínima de uma API
+
+Para iniciar um projeto, crie uma pasta, inicialize o projeto Node.js e instale as dependências. Os comandos abaixo instalam o Express e o middleware `cors` usados no exemplo:
+
+```bash
+npm init -y
+npm install express cors
+```
+
+Uma rota pode responder em JSON com `res.json(...)`. A porta usa `process.env.PORT` para funcionar em ambientes de hospedagem que definem a porta do serviço:
+
+```js
+const express = require("express");
+const cors = require("cors");
+
+const app = express();
+app.use(cors());
+app.use(express.json());
+
+app.get("/api/data-hora", (req, res) => {
+  res.json({ dataHora: new Date().toISOString() });
+});
+
+const port = process.env.PORT || 3000;
+app.listen(port, () => console.log(`API disponível na porta ${port}`));
+```
+
+Salve o código em `api.js` e execute com `node api.js`. Depois, uma requisição `GET` para `/api/data-hora` recebe um objeto JSON com a data e hora.
