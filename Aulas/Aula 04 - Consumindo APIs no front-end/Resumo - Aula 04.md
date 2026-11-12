@@ -36,3 +36,7 @@ Os métodos indicam a intenção da requisição em relação a um recurso. O co
 | `PUT` | Criar ou substituir por completo um recurso conhecido. | É usado para atualização completa e é idempotente por definição. |
 | `PATCH` | Alterar parcialmente um recurso. | Envia apenas as mudanças desejadas; a idempotência depende da operação definida pela API. |
 | `DELETE` | Remover um recurso. | Repetir a operação mantém o recurso removido; por isso, é idempotente, ainda que a resposta possa variar. |
+
+### Idempotência e segurança
+
+Uma operação é **idempotente** quando repeti-la produz o mesmo estado final no servidor que executá-la uma vez. Isso não significa necessariamente que todas as respostas sejam iguais. Uma operação **segura** não deve modificar dados. `GET` é seguro e idempotente; `POST` normalmente não é idempotente. Esses termos ajudam a prever como uma API se comporta diante de uma repetição de requisição.
