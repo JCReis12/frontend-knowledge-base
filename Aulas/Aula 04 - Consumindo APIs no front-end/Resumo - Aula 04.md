@@ -168,3 +168,15 @@ Além do corpo da resposta, verifique o **código de status HTTP** para entender
 - **Back-end:** processa a lógica e os dados; **Express:** facilita a criação de rotas e servidores Node.js.
 - **CORS:** política do navegador para requisições entre origens; o servidor configura quais origens podem acessar os recursos.
 - **Fluxo completo:** interface solicita → API processa → servidor responde → front-end interpreta e atualiza a tela.
+
+## Perguntas para testar o aprendizado
+
+1. Qual é a diferença entre uma API e uma API REST?
+2. O que significa dizer que HTTP é *stateless*?
+3. Quando escolher `GET`, `POST`, `PUT`, `PATCH` ou `DELETE`?
+4. O que é um endpoint e como o método HTTP muda a ação solicitada?
+5. Quais estruturas e tipos de valor podem ser representados em JSON?
+6. Que etapas acontecem entre a interação na página e a atualização da tela com dados da API?
+7. Qual é o papel do Express e de um middleware como `cors`?
+8. Por que o front-end deve tratar falhas HTTP e de conexão ao consumir uma API?
+9. O que deve ser configurado para publicar e acessar uma API Node.js no Render?
