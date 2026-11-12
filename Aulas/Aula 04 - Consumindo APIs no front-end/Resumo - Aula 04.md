@@ -180,3 +180,7 @@ Além do corpo da resposta, verifique o **código de status HTTP** para entender
 7. Qual é o papel do Express e de um middleware como `cors`?
 8. Por que o front-end deve tratar falhas HTTP e de conexão ao consumir uma API?
 9. O que deve ser configurado para publicar e acessar uma API Node.js no Render?
+
+## Onde encontrar APIs para praticar
+
+Catálogos de APIs públicas reúnem serviços e fontes de dados que podem ser integrados a projetos de estudo. A aula cita o [Free Public APIs](https://www.freepublicapis.com/) como exemplo. Antes de escolher uma API, confira a documentação, os recursos disponíveis, os limites de uso e se é necessário obter uma chave de acesso.
