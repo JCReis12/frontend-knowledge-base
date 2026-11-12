@@ -109,3 +109,25 @@ app.listen(port, () => console.log(`API disponível na porta ${port}`));
 ```
 
 Salve o código em `api.js` e execute com `node api.js`. Depois, uma requisição `GET` para `/api/data-hora` recebe um objeto JSON com a data e hora.
+
+### Consumindo a API no front-end
+
+No navegador, `fetch` permite enviar uma requisição e aguardar a resposta. A conversão para JSON também é assíncrona; verifique `response.ok`, trate erros e atualize a interface somente depois de receber os dados:
+
+```js
+async function carregarDataHora() {
+  try {
+    const response = await fetch("http://localhost:3000/api/data-hora");
+    if (!response.ok) {
+      throw new Error(`Erro HTTP: ${response.status}`);
+    }
+
+    const dados = await response.json();
+    document.querySelector("#data-hora").textContent = dados.dataHora;
+  } catch (erro) {
+    console.error("Não foi possível carregar a data e hora:", erro);
+  }
+}
+```
+
+Em uma aplicação real, apresente estados de carregamento e mensagens de erro compreensíveis, e use a URL pública da API após o deploy em vez do endereço local.
