@@ -68,3 +68,9 @@ Exemplo de resposta JSON:
 ```
 
 Em JSON válido, nomes de propriedades e textos usam aspas duplas; comentários e vírgulas sobrando não são permitidos. Isso é importante ao construir ou interpretar o corpo de uma requisição.
+
+## 6. Back-end e Web Service
+
+O **back-end** é a parte da aplicação que processa requisições, aplica regras de negócio, gerencia dados e fornece recursos para clientes como navegadores e aplicativos. Ele pode armazenar ou recuperar dados em um banco e oferecer uma API para que outros sistemas acessem essas funcionalidades.
+
+Um **Web Service** é um serviço acessível pela web que permite a comunicação entre sistemas, normalmente por HTTP/HTTPS. Ele possibilita que aplicações construídas com linguagens e plataformas diferentes se comuniquem usando um formato e um protocolo acordados. Uma API web pode ser oferecida por um serviço desse tipo.
