@@ -74,3 +74,9 @@ Em JSON válido, nomes de propriedades e textos usam aspas duplas; comentários 
 O **back-end** é a parte da aplicação que processa requisições, aplica regras de negócio, gerencia dados e fornece recursos para clientes como navegadores e aplicativos. Ele pode armazenar ou recuperar dados em um banco e oferecer uma API para que outros sistemas acessem essas funcionalidades.
 
 Um **Web Service** é um serviço acessível pela web que permite a comunicação entre sistemas, normalmente por HTTP/HTTPS. Ele possibilita que aplicações construídas com linguagens e plataformas diferentes se comuniquem usando um formato e um protocolo acordados. Uma API web pode ser oferecida por um serviço desse tipo.
+
+## 7. Express.js
+
+**Express.js** é um framework minimalista e flexível para Node.js que simplifica a criação de servidores web e APIs. Em comparação com o módulo HTTP nativo do Node.js, ele reduz o trabalho necessário para organizar rotas e processar requisições e respostas.
+
+Rotas associam um caminho e um método HTTP a uma ação, como `GET /usuarios`. **Middlewares** são funções executadas durante o processamento da requisição e podem, por exemplo, registrar informações, interpretar dados recebidos, aplicar autenticação ou tratar erros. O Express é adequado para APIs REST e back-ends web; para comunicação em tempo real, WebSockets podem ser mais apropriados, enquanto processamento pesado costuma ser encaminhado a workers.
