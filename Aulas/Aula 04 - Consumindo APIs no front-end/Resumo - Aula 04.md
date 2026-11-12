@@ -155,3 +155,7 @@ O levantamento da atividade está organizado em [Pesquisa - Projetos com API](./
 A segunda atividade propõe criar uma API com Express que disponibilize uma rota para consultar data e hora, publicar o serviço no Render e desenvolver uma aplicação front-end que consuma essa rota e apresente o resultado na tela. A publicação torna a API acessível por uma URL pública, que deve ser usada pelo cliente.
 
 O enunciado também solicita separar front-end e API em repositórios distintos e reunir em um documento evidências do código, da aplicação em funcionamento, dos painéis do Render e da Vercel e os links dos repositórios no GitHub.
+
+## 12. Interpretando o resultado da requisição
+
+Além do corpo da resposta, verifique o **código de status HTTP** para entender o resultado: códigos `2xx` indicam sucesso; `4xx`, problemas relacionados à requisição ou à autorização do cliente; e `5xx`, falhas durante o processamento no servidor. No `fetch`, uma resposta HTTP de erro não rejeita automaticamente a promessa, por isso é importante testar `response.ok` antes de interpretar o JSON.
