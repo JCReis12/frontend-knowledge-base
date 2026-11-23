@@ -358,3 +358,138 @@ O **NPM** é o gerenciador de pacotes padrão que acompanha o Node.js. Ele é co
 - **`package.json`:** Arquivo manifesto localizado na raiz do projeto. Contém metadados da aplicação (nome, versão, autor, licença), scripts de automação (`start`, `build`, `test`) e a lista declarativa de dependências necessárias.
 - **`package-lock.json`:** Gerado automaticamente pelo NPM para registrar com precisão matemática a árvore exata de versões e hashes de cada biblioteca instalada. Garante que qualquer membro da equipe ou servidor de CI/CD reproduza exatamente o mesmo ambiente de dependências.
 - **Pasta `node_modules/`:** Diretório onde ficam baixados os arquivos das bibliotecas instaladas. Por ser muito pesado e redundante, deve ser sempre ignorado pelo Git através do `.gitignore`.
+
+
+---
+
+# Criação de Projetos React com Create React App
+
+## O que é o Create React App (CRA)?
+
+O **Create React App** é uma ferramenta oficial mantida pela equipe do React (e comunidade) que permite criar rapidamente a estrutura inicial de uma aplicação React sem a necessidade de configurar manualmente ferramentas complexas de compilação como o Webpack e o Babel.
+
+### Comando de Criação com NPX
+
+O comando recomendado para inicializar o projeto é:
+
+```bash
+npx create-react-app meu-primeiro-app
+```
+
+> **Por que usar `npx` em vez de `npm`?**  
+> O `npx` (*Node Package Execute*) executa a versão mais recente do utilitário `create-react-app` diretamente do registro do NPM sem exigir a instalação global permanente da ferramenta na máquina, evitando conflitos de versões desatualizadas.
+
+## Estrutura de Pastas de um Projeto React
+
+Ao criar um projeto com o CRA, a estrutura gerada é organizada da seguinte forma:
+
+```text
+meu-primeiro-app/
+├── node_modules/         # Bibliotecas e dependências instaladas
+├── public/               # Arquivos estáticos acessíveis diretamente pelo navegador
+│   ├── favicon.ico       # Ícone exibido na aba do navegador
+│   ├── index.html        # Único arquivo HTML da Single Page Application (SPA)
+│   ├── logo192.png       # Ícone para dispositivos móveis
+│   ├── manifest.json     # Metadados de configuração para PWA (Progressive Web App)
+│   └── robots.txt        # Instruções para rastreadores de mecanismos de busca
+├── src/                  # Código-fonte da aplicação (onde os desenvolvedores atuam)
+│   ├── App.css           # Estilos específicos do componente principal App
+│   ├── App.js            # Componente raiz da interface React
+│   ├── App.test.js       # Arquivo de testes unitários do componente App
+│   ├── index.css         # Estilos globais da aplicação
+│   ├── index.js          # Ponto de entrada JavaScript que renderiza o React no DOM
+│   ├── logo.svg          # Logotipo SVG padrão
+│   ├── reportWebVitals.js# Coleta de métricas de desempenho da aplicação
+│   └── setupTests.js     # Configuração do ambiente de testes (Jest / Testing Library)
+├── .gitignore            # Arquivos e pastas que não devem ser enviados ao Git
+├── package.json          # Metadados, scripts e dependências do projeto
+└── README.md             # Documentação introdutória do projeto
+```
+
+### Principais Arquivos em Detalhe
+
+- **`public/index.html`:** Contém a tag fundamental `<div id="root"></div>`. Em uma aplicação SPA (*Single Page Application*), o navegador carrega apenas esta página HTML, e todo o restante do conteúdo é injetado dinamicamente pelo JavaScript.
+- **`src/index.js`:** Importa a biblioteca `ReactDOM` e monta a árvore de componentes da aplicação dentro da `div#root` do HTML.
+- **`src/App.js`:** Componente funcional principal que define a estrutura visual inicial da aplicação.
+
+## Scripts Essenciais do Projeto
+
+No arquivo `package.json`, são definidos os comandos de terminal para operar o projeto:
+
+```bash
+# Inicia o servidor de desenvolvimento local na porta 3000 com live-reloading
+npm start
+
+# Executa os testes automatizados com o Jest em modo interativo
+npm test
+
+# Compila e otimiza a aplicação para produção na pasta build/
+npm run build
+```
+
+---
+
+# Deploy e Hospedagem com Vercel
+
+## O que é Deploy?
+
+O **Deploy** (ou implantação) é o processo de transferir, construir e disponibilizar uma aplicação desenvolvida no ambiente local para um servidor ou plataforma em nuvem acessível publicamente na internet por qualquer usuário final.
+
+## A Plataforma Vercel
+
+A **Vercel** é uma plataforma em nuvem pioneira, focada na experiência do desenvolvedor front-end e especializada na hospedagem de aplicações Jamstack, React, Next.js, Vue e sites estáticos.
+
+### Vantagens da Vercel
+
+- **Integração Contínua (CI/CD Automático):** Conecta-se diretamente aos repositórios do GitHub, GitLab ou Bitbucket. Cada comando `git push` enviado para a branch principal dispara automaticamente o processo de build e publicação de uma nova versão estável.
+- **Preview Deployments:** Cada Pull Request ou branch secundária ganha automaticamente uma URL de visualização isolada e segura para revisão em equipe antes do merge na branch principal.
+- **CDN Global de Alta Performance:** Distribui os arquivos estáticos compilados em dezenas de servidores ao redor do mundo (*Edge Network*), entregando o conteúdo com latência mínima ao usuário.
+- **Certificado SSL Gratuito:** Todo domínio e subdomínio (`.vercel.app`) recebe automaticamente criptografia HTTPS gerenciada sem custos adicionais.
+
+## Fluxo Completo de Deploy na Vercel
+
+1. **Repositório no GitHub:** Subir o código da aplicação React para um repositório remoto no GitHub (`git push -u origin main`).
+2. **Conexão com a Vercel:** Criar uma conta na [Vercel](https://vercel.com) e autenticar utilizando a conta do GitHub.
+3. **Importação do Projeto:** Clicar em **"Add New... → Project"** e selecionar o repositório desejado.
+4. **Configuração de Build:** A Vercel detecta automaticamente que se trata de um projeto React gerado com Create React App, pré-configurando os comandos de build (`npm run build`) e pasta de saída (`build/`).
+5. **Deploy:** Clicar em **"Deploy"**. Em questão de segundos, o build é finalizado e uma URL pública segura é gerada (exemplo: `https://meu-app-react.vercel.app`).
+
+---
+
+# Atividades Práticas da Aula 02
+
+## Atividade 01: Setup Completo de Ambiente, Criação do Projeto e Deploy
+
+A primeira atividade prática da aula consiste em consolidar a cadeia completa de desenvolvimento moderno:
+1. Instalar e verificar as ferramentas essenciais: Git, Node.js (LTS), NPM e VS Code com as extensões recomendadas.
+2. Configurar a identidade global do Git (`user.name` e `user.email`).
+3. Criar uma aplicação React utilizando o Create React App via terminal (`npx create-react-app ...`).
+4. Inicializar o versionamento do projeto, aplicando commits semânticos atômicos.
+5. Criar uma tag anotada no padrão SemVer (ex.: `git tag -a v1.0.0 -m "Release v1.0.0"`).
+6. Criar um repositório remoto no GitHub e sincronizar o código e as tags (`git push origin main` e `git push origin --tags`).
+7. Conectar o repositório à plataforma Vercel e realizar o primeiro deploy contínuo em produção.
+
+## Atividade 02: Relatório Técnico de Configuração de Ambiente
+
+A segunda atividade solicita a produção de um **relatório técnico estruturado (mínimo de 5 páginas)**, contendo:
+- **Capa e Sumário:** Identificação dos autores, disciplina e temas abordados.
+- **Fundamentação Teórica:** Conceito de versionamento de código, vantagens operacionais, comparação entre versionamento e backup, e detalhamento do padrão Semantic Versioning (SemVer: Major, Minor e Patch).
+- **Guia Passo a Passo das Ferramentas:** Instruções detalhadas com capturas de tela e comandos executados para instalação e configuração do VS Code, Git e Node.js/NPM.
+- **Desenvolvimento da Aplicação React:** Explicação da criação do projeto via CRA, detalhamento funcional da estrutura de arquivos e pastas (`public`, `src`, `package.json`) e comandos de execução.
+- **Processo de Deploy na Vercel:** Documentação com evidências visuais do fluxo de integração contínua (CI/CD) do GitHub com a Vercel e validação da URL pública no navegador.
+- **Conclusão e Referências Bibliográficas:** Avaliação sobre a importância da padronização e rastreabilidade no ciclo de vida de software moderno.
+
+---
+
+# Revisão Rápida da Aula 02
+
+- **Versionamento vs. Backup:** Backup é um retrato estático de segurança; versionamento é o histórico inteligente com autoria, datas e motivos de cada alteração.
+- **SemVer (MAJOR.MINOR.PATCH):**
+  - **MAJOR:** Quebra de compatibilidade com versões anteriores.
+  - **MINOR:** Adição de nova funcionalidade mantendo retrocompatibilidade.
+  - **PATCH:** Correção de falhas e bugs pontuais.
+- **VS Code:** Editor leve e extensível com ecossistema essencial para produtividade (Prettier, ESLint, GitLens).
+- **Tags no Git:** Marcadores estáticos para registrar releases oficiais (`git tag -a v1.0.0 -m "..."`).
+- **Node.js e NPM:** Runtime que permitiu rodar JS fora do navegador e o gerenciador de pacotes padrão que controla as dependências do ecossistema.
+- **Create React App:** Utilitário que gera a arquitetura base de uma aplicação React pronta para desenvolvimento com `npx create-react-app`.
+- **Vercel:** Hospedagem em nuvem com deploy contínuo acionado automaticamente a cada alteração no repositório GitHub.
