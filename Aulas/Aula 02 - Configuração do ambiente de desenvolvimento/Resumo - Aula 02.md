@@ -234,3 +234,127 @@ PATCH → Correção de bug
 > `2` = versão principal  
 > `4` = novas funcionalidades  
 > `7` = correções de bugs
+
+
+---
+
+# Ambiente de Desenvolvimento e Ferramentas
+
+## Visual Studio Code (VS Code)
+
+O **Visual Studio Code** é o editor de código-fonte mais utilizado no desenvolvimento web moderno. Desenvolvido pela Microsoft, é gratuito, de código aberto, multiplataforma (Windows, macOS, Linux) e altamente extensível.
+
+### Editor de Código vs. IDE
+
+- **Editor de Código (ex.: VS Code, Sublime Text):** Ferramenta focada em edição rápida de texto e código, leve, cujo ecossistema de funcionalidades (depuração, integração com controle de versão, suporte a linguagens) é habilitado sob demanda por meio de extensões e plugins.
+- **IDE - Integrated Development Environment (ex.: WebStorm, Eclipse, Visual Studio):** Ambiente completo integrado que já vem de fábrica com compiladores, depuradores avançados, gerenciadores de banco de dados e ferramentas de automação, porém consome mais recursos de hardware.
+
+### Recursos Essenciais do VS Code
+
+- **Terminal Integrado:** Permite executar comandos do PowerShell, Bash ou Git Bash sem sair da janela do editor.
+- **Controle de Versão Embutido:** Interface gráfica para monitorar mudanças, realizar commits, visualizar diffs e alternar branches.
+- **IntelliSense:** Autocompletar inteligente baseado em tipos de variáveis, assinaturas de funções e módulos importados.
+- **Depuração (Debugging):** Pontos de interrupção (breakpoints), inspeção de variáveis e pilha de chamadas diretamente no editor.
+
+### Extensões Recomendadas para Front-end
+
+1. **Prettier - Code Formatter:** Garante formatação consistente e padronizada automática do código (identação, aspas, ponto e vírgula).
+2. **ESLint:** Analisador estático que identifica padrões problemáticos e erros de sintaxe em JavaScript/TypeScript.
+3. **GitLens:** Enriquece a visualização do Git no editor, exibindo a autoria de cada linha de código (*git blame*), histórico de arquivos e commits.
+4. **Live Server:** Inicia um servidor de desenvolvimento local com recarregamento em tempo real (*live reload*) para arquivos HTML/CSS/JS.
+5. **Auto Rename Tag / Auto Close Tag:** Automatiza o fechamento e renomeação sincronizada de tags HTML e JSX.
+
+---
+
+# Git: Configuração, Tags e Boas Práticas
+
+## Instalação e Configurações Globais
+
+Após instalar o Git, a primeira etapa obrigatória é configurar a identidade do autor dos commits. Essas informações ficam gravadas permanentemente no histórico:
+
+```bash
+# Define o nome global de usuário
+git config --global user.name "Seu Nome"
+
+# Define o e-mail global associado à conta do GitHub
+git config --global user.email "seu-email@exemplo.com"
+
+# Verifica as configurações aplicadas
+git config --list
+```
+
+## O que são Tags no Git?
+
+**Tags** são marcadores específicos que apontam para pontos exatos no histórico de commits do repositório. São amplamente utilizadas para sinalizar **lançamentos de versões de software (releases)** de acordo com o padrão SemVer (ex.: `v1.0.0`, `v1.1.0`, `v2.0.0`).
+
+Ao contrário das branches, que se movem a cada novo commit, **tags são estáticas e permanentes**, representando o estado congelado do projeto em uma entrega oficial.
+
+### Tipos de Tags
+
+O Git oferece dois tipos principais de tags:
+
+1. **Tags Leves (Lightweight Tags):**
+   - Funcionam apenas como um ponteiro direto (atalho) para um commit específico.
+   - Não armazenam informações extras como autor, data ou mensagem de lançamento.
+   - Criação:
+     ```bash
+     git tag v1.0.0
+     ```
+
+2. **Tags Anotadas (Annotated Tags) — Recomendado para Releases:**
+   - São armazenadas como objetos completos no banco de dados do Git.
+   - Contêm a data de criação, o nome e e-mail do autor da tag, uma mensagem explicativa de release e possuem verificação de integridade (checksum).
+   - Criação:
+     ```bash
+     git tag -a v1.0.0 -m "Release da versão 1.0.0 - Lançamento da primeira versão estável"
+     ```
+
+### Comandos Essenciais para Gerenciar Tags
+
+| Comando | Descrição |
+| --- | --- |
+| `git tag` | Lista todas as tags disponíveis no repositório local. |
+| `git show v1.0.0` | Exibe os detalhes da tag (autor, data, mensagem) e o commit ao qual está vinculada. |
+| `git push origin v1.0.0` | Envia uma tag específica para o repositório remoto (o `git push` padrão não envia tags). |
+| `git push origin --tags` | Envia todas as tags locais pendentes de uma só vez para o servidor remoto. |
+| `git tag -d v1.0.0` | Deleta uma tag do repositório local. |
+| `git push origin --delete v1.0.0` | Remove uma tag do repositório remoto. |
+
+## Boas Práticas no Controle de Versão
+
+- **Commits Atômicos:** Cada commit deve conter apenas uma única mudança lógica ou correção específica. Evite agrupar várias alterações desconexas em um mesmo commit massivo.
+- **Mensagens Claras e Semânticas:** Utilize convenções reconhecidas (ex.: [Conventional Commits](https://www.conventionalcommits.org/)) com prefixos padronizados:
+  - `feat:` para novas funcionalidades.
+  - `fix:` para correções de bugs.
+  - `docs:` para alterações em documentação.
+  - `refactor:` para refatorações que não alteram o comportamento externo.
+  - `chore:` para atualizações de dependências e configurações de build.
+- **Uso Estratégico de Branches:** Nunca desenvolva código instável diretamente na branch principal (`main`/`master`). Utilize branches de funcionalidade (`feature/nome-da-feature`) ou correção (`fix/nome-do-bug`).
+- **Testes Antes do Merge:** Assegure-se de que a aplicação compila e passa nos testes automatizados antes de mesclar alterações na branch principal.
+
+---
+
+# Node.js e NPM: Ecossistema de Execução
+
+## O que é o Node.js?
+
+O **Node.js** é um ambiente de execução (runtime) JavaScript assíncrono e orientado a eventos, construído sobre o motor V8 da Google (o mesmo utilizado no navegador Google Chrome).
+
+### Importância no Front-end Moderno
+
+Tradicionalmente, o JavaScript só podia ser executado dentro dos navegadores. Com a criação do Node.js:
+- O JavaScript passou a ser executado diretamente no sistema operacional do servidor e na máquina do desenvolvedor.
+- Unificou a linguagem em toda a stack de desenvolvimento (front-end, back-end e automação de tarefas).
+- Viabilizou a criação de ferramentas modernas de compilação, minificação, testes automatizados e servidores de desenvolvimento (Webpack, Vite, Babel, ESLint, Create React App).
+
+## O que é o NPM (Node Package Manager)?
+
+O **NPM** é o gerenciador de pacotes padrão que acompanha o Node.js. Ele é composto por duas partes:
+1. **Registro Público (NPM Registry):** O maior catálogo mundial de bibliotecas e módulos de código aberto reutilizáveis.
+2. **Interface de Linha de Comando (CLI):** Ferramenta no terminal para instalar, atualizar e gerenciar pacotes locais e globais em projetos.
+
+### Arquivos Principais do Ecossistema
+
+- **`package.json`:** Arquivo manifesto localizado na raiz do projeto. Contém metadados da aplicação (nome, versão, autor, licença), scripts de automação (`start`, `build`, `test`) e a lista declarativa de dependências necessárias.
+- **`package-lock.json`:** Gerado automaticamente pelo NPM para registrar com precisão matemática a árvore exata de versões e hashes de cada biblioteca instalada. Garante que qualquer membro da equipe ou servidor de CI/CD reproduza exatamente o mesmo ambiente de dependências.
+- **Pasta `node_modules/`:** Diretório onde ficam baixados os arquivos das bibliotecas instaladas. Por ser muito pesado e redundante, deve ser sempre ignorado pelo Git através do `.gitignore`.
