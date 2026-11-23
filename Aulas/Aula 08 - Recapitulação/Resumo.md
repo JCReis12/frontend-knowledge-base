@@ -129,3 +129,178 @@ O React introduziu o conceito de **Virtual DOM (VDOM)** para resolver o gargalo 
 1. **Alteração de Estado:** Quando os dados da aplicação mudam, o React cria uma nova árvore do Virtual DOM.
 2. **Diffing:** O React compara a nova árvore do Virtual DOM com a árvore virtual anterior para identificar com precisão matemática exatamente quais nós mudaram.
 3. **Atualização em Lote (Batch Update):** O React calcula as menores operações possíveis e atualiza **apenas os nós alterados diretamente no DOM real**, sem redesenhar a página inteira.
+
+
+---
+
+## 4. Fundamentos do React
+
+### O que é o React?
+
+O **React** é uma biblioteca de código aberto mantida pela Meta (Facebook) para a construção de interfaces de usuário reativas, modulares e eficientes. Seu núcleo é baseado em:
+- **Componentização:** A interface é dividida em blocos pequenos, autocontidos e reutilizáveis.
+- **Paradigma Declarativo:** O desenvolvedor define como a tela deve se parecer para cada estado de dados, e o React atualiza o DOM automaticamente quando o estado muda.
+
+### O que é JSX (*JavaScript XML*)?
+
+**JSX** é uma extensão de sintaxe que permite escrever uma marcação semelhante a HTML diretamente dentro de arquivos JavaScript. Por baixo dos panos, o compilador (Babel ou SWC) converte o JSX em chamadas `React.createElement(...)`.
+
+#### Regras Fundamentais do JSX:
+
+1. **Interpolação de Expressões com Chaves `{}`:**
+   Qualquer expressão JavaScript válida pode ser inserida dentro de chaves no JSX:
+   ```jsx
+   const usuario = "João";
+   return <h1>Olá, {usuario.toUpperCase()}!</h1>;
+   ```
+2. **Diferenças em Relação ao HTML Padrão:**
+   - `class` torna-se `className` (pois `class` é uma palavra reservada em JS).
+   - `for` torna-se `htmlFor`.
+   - Eventos usam notação **camelCase**: `onClick`, `onChange`, `onSubmit`.
+   - Tags sem fechamento precisam ser autoencerradas: `<img />`, `<input />`, `<br />`.
+   - Propriedades de estilo recebem objetos JavaScript: `style={{ backgroundColor: "blue", fontSize: "16px" }}`.
+3. **Elemento Raiz Obrigatório (*Fragment*):**
+   Todo componente deve retornar um único elemento pai. Para evitar a criação de `<div>` desnecessárias no HTML final, utiliza-se o **Fragment** do React:
+   ```jsx
+   return (
+     <>
+       <h1>Título</h1>
+       <p>Parágrafo explicativo</p>
+     </>
+   );
+   ```
+
+### Componentes Funcionais (*Functional Components*)
+
+No React moderno, componentes são definidos como funções JavaScript simples que retornam JSX. A convenção da comunidade exige que o nome de qualquer componente inicie com **letra maiúscula (PascalCase)**:
+
+```jsx
+function CartaoPerfil({ nome, cargo, fotoUrl }) {
+  return (
+    <div className="card">
+      <img src={fotoUrl} alt={`Foto de ${nome}`} />
+      <h3>{nome}</h3>
+      <p>{cargo}</p>
+    </div>
+  );
+}
+
+export default CartaoPerfil;
+```
+
+### Props (*Properties*)
+
+**Props** são os argumentos passados para os componentes React, semelhantes aos parâmetros de uma função.
+
+- **Fluxo Unidirecional de Dados (*One-Way Data Flow*):** As props trafegam exclusivamente de cima para baixo, isto é, do componente pai para os componentes filhos (*top-down*).
+- **Imutabilidade Absoluta:** Um componente filho **nunca deve alterar o valor de suas próprias props**. Elas são tratadas como somente leitura (*read-only*).
+- **Desestruturação:** Prática recomendada para extrair propriedades diretamente nos argumentos da função:
+  ```jsx
+  // Em vez de props.titulo e props.subtitulo:
+  function Cabecalho({ titulo, subtitulo }) {
+    return (
+      <header>
+        <h1>{titulo}</h1>
+        <h2>{subtitulo}</h2>
+      </header>
+    );
+  }
+  ```
+- **Passagem de Funções via Props:** Permite que componentes filhos comuniquem eventos de volta aos pais através de funções de callback disparadas em manipuladores de eventos (`onClick`, `onSubmit`).
+
+### Listas e a Propriedade Especial `key`
+
+Para renderizar múltiplos elementos baseados em uma coleção de dados, utiliza-se o método `.map()` do JavaScript:
+
+```jsx
+function ListaTarefas({ tarefas }) {
+  return (
+    <ul>
+      {tarefas.map((tarefa) => (
+        <li key={tarefa.id}>{tarefa.texto}</li>
+      ))}
+    </ul>
+  );
+}
+```
+
+#### Por que o atributo `key` é obrigatório?
+
+- O `key` é uma string ou número único que identifica cada item individualmente perante o algoritmo de reconciliação do Virtual DOM.
+- Ele permite que o React saiba exatamente qual item foi inserido, removido, editado ou reordenado sem precisar recriar a lista inteira no DOM real.
+- **Boa prática:** Sempre utilize identificadores únicos do banco de dados ou da API (`item.id`). **Evite utilizar o índice do array (`index`) como chave**, pois qualquer reordenação ou exclusão causa falhas visuais graves e queda de performance.
+
+### Renderização Condicional
+
+Em React, a renderização de elementos na tela pode variar de acordo com condições lógicas:
+
+1. **Retorno Antecipado com `if`:**
+   ```jsx
+   if (carregando) {
+     return <p className="spinner">Carregando dados...</p>;
+   }
+   ```
+2. **Operador Ternário (`condição ? verdadeiro : falso`):**
+   ```jsx
+   return (
+     <div>
+       {usuarioLogado ? (
+         <button onClick={fazerLogout}>Sair</button>
+       ) : (
+         <button onClick={fazerLogin}>Entrar</button>
+       )}
+     </div>
+   );
+   ```
+3. **Operador de Curto-Circuito (`&&`):**
+   Útil para renderizar algo apenas quando a condição for verdadeira:
+   ```jsx
+   return (
+     <div>
+       {temMensagensNaoLidas && (
+         <span className="badge">Você tem novas mensagens!</span>
+       )}
+     </div>
+   );
+   ```
+
+---
+
+## 5. Projeto Prático da Aula 08: Aplicação Modular em React
+
+A atividade prática consiste na construção de uma aplicação React consolidando todos os fundamentos apresentados:
+
+1. **Setup Inicial:** Criação da estrutura base com Vite ou Create React App.
+2. **Arquitetura Modular de Componentes:**
+   - Criação de pasta `src/components/` contendo componentes isolados (`Header`, `Card`, `List`, `Footer`).
+   - Aplicação de boas práticas de estilização modular e semântica.
+3. **Composição e Dados Dinâmicos:**
+   - Estruturação de dados mockados em arrays de objetos.
+   - Distribuição de dados via props a partir de um componente central.
+   - Renderização dinâmica de cards/itens com `.map()` e validação estrita de chaves `key`.
+4. **Estados e Renderização Condicional:**
+   - Implementação de alternância entre telas (ex.: lista vazia, estado carregando e estado com dados preenchidos).
+5. **Versionamento e Publicação:**
+   - Envio do código para o GitHub com mensagens de commit padronizadas (Conventional Commits).
+   - Documentação completa no arquivo `README.md` detalhando as decisões arquiteturais adotadas.
+
+---
+
+## 6. Revisão Rápida da Aula 08
+
+- **JavaScript Moderno:** `const` é o padrão; `let` para variáveis que mudam; `var` está obsoleto. Sempre utilize igualdade estrita (`===`).
+- **Funções:** Arrow functions fornecem sintaxe limpa e preservam o escopo léxico do `this`.
+- **DOM vs. Virtual DOM:** O DOM real é custoso de atualizar (reflow/repaint); o Virtual DOM compara diferenças em memória (diffing) e atualiza apenas os nós estritamente necessários no DOM real (reconciliação).
+- **JSX:** Sintaxe que mistura HTML e JS compilada para chamadas nativas do React. Requer `{}` para interpolação, `className` para classes e nós fechados.
+- **Componentes e Props:** Componentes são blocos funcionais reutilizáveis em PascalCase. Props trafegam unidirecionalmente (pai para filho) e são estritamente imutáveis.
+- **Listas e Keys:** Sempre use `.map()` para iterar coleções e atribua uma `key` única e estável (como `item.id`) a cada elemento.
+
+---
+
+## 7. Perguntas para Testar o Conhecimento
+
+1. Por que a comparação com `===` é mais segura do que a comparação com `==` em JavaScript?
+2. O que acontece com o desempenho de uma página web quando realizamos dezenas de manipulações imperativas diretas no DOM real?
+3. O que é o algoritmo de Diffing e qual é o papel do Virtual DOM nesse processo?
+4. Por que nunca devemos alterar diretamente o valor de uma `prop` dentro de um componente filho no React?
+5. Qual é o perigo de utilizar o índice do array (`index`) como `key` na renderização de listas dinâmicas com `.map()`?
