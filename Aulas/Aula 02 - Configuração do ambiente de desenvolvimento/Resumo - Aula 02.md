@@ -234,3 +234,262 @@ PATCH → Correção de bug
 > `2` = versão principal  
 > `4` = novas funcionalidades  
 > `7` = correções de bugs
+
+
+---
+
+# Ambiente de Desenvolvimento e Ferramentas
+
+## Visual Studio Code (VS Code)
+
+O **Visual Studio Code** é o editor de código-fonte mais utilizado no desenvolvimento web moderno. Desenvolvido pela Microsoft, é gratuito, de código aberto, multiplataforma (Windows, macOS, Linux) e altamente extensível.
+
+### Editor de Código vs. IDE
+
+- **Editor de Código (ex.: VS Code, Sublime Text):** Ferramenta focada em edição rápida de texto e código, leve, cujo ecossistema de funcionalidades (depuração, integração com controle de versão, suporte a linguagens) é habilitado sob demanda por meio de extensões e plugins.
+- **IDE - Integrated Development Environment (ex.: WebStorm, Eclipse, Visual Studio):** Ambiente completo integrado que já vem de fábrica com compiladores, depuradores avançados, gerenciadores de banco de dados e ferramentas de automação, porém consome mais recursos de hardware.
+
+### Recursos Essenciais do VS Code
+
+- **Terminal Integrado:** Permite executar comandos do PowerShell, Bash ou Git Bash sem sair da janela do editor.
+- **Controle de Versão Embutido:** Interface gráfica para monitorar mudanças, realizar commits, visualizar diffs e alternar branches.
+- **IntelliSense:** Autocompletar inteligente baseado em tipos de variáveis, assinaturas de funções e módulos importados.
+- **Depuração (Debugging):** Pontos de interrupção (breakpoints), inspeção de variáveis e pilha de chamadas diretamente no editor.
+
+### Extensões Recomendadas para Front-end
+
+1. **Prettier - Code Formatter:** Garante formatação consistente e padronizada automática do código (identação, aspas, ponto e vírgula).
+2. **ESLint:** Analisador estático que identifica padrões problemáticos e erros de sintaxe em JavaScript/TypeScript.
+3. **GitLens:** Enriquece a visualização do Git no editor, exibindo a autoria de cada linha de código (*git blame*), histórico de arquivos e commits.
+4. **Live Server:** Inicia um servidor de desenvolvimento local com recarregamento em tempo real (*live reload*) para arquivos HTML/CSS/JS.
+5. **Auto Rename Tag / Auto Close Tag:** Automatiza o fechamento e renomeação sincronizada de tags HTML e JSX.
+
+---
+
+# Git: Configuração, Tags e Boas Práticas
+
+## Instalação e Configurações Globais
+
+Após instalar o Git, a primeira etapa obrigatória é configurar a identidade do autor dos commits. Essas informações ficam gravadas permanentemente no histórico:
+
+```bash
+# Define o nome global de usuário
+git config --global user.name "Seu Nome"
+
+# Define o e-mail global associado à conta do GitHub
+git config --global user.email "seu-email@exemplo.com"
+
+# Verifica as configurações aplicadas
+git config --list
+```
+
+## O que são Tags no Git?
+
+**Tags** são marcadores específicos que apontam para pontos exatos no histórico de commits do repositório. São amplamente utilizadas para sinalizar **lançamentos de versões de software (releases)** de acordo com o padrão SemVer (ex.: `v1.0.0`, `v1.1.0`, `v2.0.0`).
+
+Ao contrário das branches, que se movem a cada novo commit, **tags são estáticas e permanentes**, representando o estado congelado do projeto em uma entrega oficial.
+
+### Tipos de Tags
+
+O Git oferece dois tipos principais de tags:
+
+1. **Tags Leves (Lightweight Tags):**
+   - Funcionam apenas como um ponteiro direto (atalho) para um commit específico.
+   - Não armazenam informações extras como autor, data ou mensagem de lançamento.
+   - Criação:
+     ```bash
+     git tag v1.0.0
+     ```
+
+2. **Tags Anotadas (Annotated Tags) — Recomendado para Releases:**
+   - São armazenadas como objetos completos no banco de dados do Git.
+   - Contêm a data de criação, o nome e e-mail do autor da tag, uma mensagem explicativa de release e possuem verificação de integridade (checksum).
+   - Criação:
+     ```bash
+     git tag -a v1.0.0 -m "Release da versão 1.0.0 - Lançamento da primeira versão estável"
+     ```
+
+### Comandos Essenciais para Gerenciar Tags
+
+| Comando | Descrição |
+| --- | --- |
+| `git tag` | Lista todas as tags disponíveis no repositório local. |
+| `git show v1.0.0` | Exibe os detalhes da tag (autor, data, mensagem) e o commit ao qual está vinculada. |
+| `git push origin v1.0.0` | Envia uma tag específica para o repositório remoto (o `git push` padrão não envia tags). |
+| `git push origin --tags` | Envia todas as tags locais pendentes de uma só vez para o servidor remoto. |
+| `git tag -d v1.0.0` | Deleta uma tag do repositório local. |
+| `git push origin --delete v1.0.0` | Remove uma tag do repositório remoto. |
+
+## Boas Práticas no Controle de Versão
+
+- **Commits Atômicos:** Cada commit deve conter apenas uma única mudança lógica ou correção específica. Evite agrupar várias alterações desconexas em um mesmo commit massivo.
+- **Mensagens Claras e Semânticas:** Utilize convenções reconhecidas (ex.: [Conventional Commits](https://www.conventionalcommits.org/)) com prefixos padronizados:
+  - `feat:` para novas funcionalidades.
+  - `fix:` para correções de bugs.
+  - `docs:` para alterações em documentação.
+  - `refactor:` para refatorações que não alteram o comportamento externo.
+  - `chore:` para atualizações de dependências e configurações de build.
+- **Uso Estratégico de Branches:** Nunca desenvolva código instável diretamente na branch principal (`main`/`master`). Utilize branches de funcionalidade (`feature/nome-da-feature`) ou correção (`fix/nome-do-bug`).
+- **Testes Antes do Merge:** Assegure-se de que a aplicação compila e passa nos testes automatizados antes de mesclar alterações na branch principal.
+
+---
+
+# Node.js e NPM: Ecossistema de Execução
+
+## O que é o Node.js?
+
+O **Node.js** é um ambiente de execução (runtime) JavaScript assíncrono e orientado a eventos, construído sobre o motor V8 da Google (o mesmo utilizado no navegador Google Chrome).
+
+### Importância no Front-end Moderno
+
+Tradicionalmente, o JavaScript só podia ser executado dentro dos navegadores. Com a criação do Node.js:
+- O JavaScript passou a ser executado diretamente no sistema operacional do servidor e na máquina do desenvolvedor.
+- Unificou a linguagem em toda a stack de desenvolvimento (front-end, back-end e automação de tarefas).
+- Viabilizou a criação de ferramentas modernas de compilação, minificação, testes automatizados e servidores de desenvolvimento (Webpack, Vite, Babel, ESLint, Create React App).
+
+## O que é o NPM (Node Package Manager)?
+
+O **NPM** é o gerenciador de pacotes padrão que acompanha o Node.js. Ele é composto por duas partes:
+1. **Registro Público (NPM Registry):** O maior catálogo mundial de bibliotecas e módulos de código aberto reutilizáveis.
+2. **Interface de Linha de Comando (CLI):** Ferramenta no terminal para instalar, atualizar e gerenciar pacotes locais e globais em projetos.
+
+### Arquivos Principais do Ecossistema
+
+- **`package.json`:** Arquivo manifesto localizado na raiz do projeto. Contém metadados da aplicação (nome, versão, autor, licença), scripts de automação (`start`, `build`, `test`) e a lista declarativa de dependências necessárias.
+- **`package-lock.json`:** Gerado automaticamente pelo NPM para registrar com precisão matemática a árvore exata de versões e hashes de cada biblioteca instalada. Garante que qualquer membro da equipe ou servidor de CI/CD reproduza exatamente o mesmo ambiente de dependências.
+- **Pasta `node_modules/`:** Diretório onde ficam baixados os arquivos das bibliotecas instaladas. Por ser muito pesado e redundante, deve ser sempre ignorado pelo Git através do `.gitignore`.
+
+
+---
+
+# Criação de Projetos React com Create React App
+
+## O que é o Create React App (CRA)?
+
+O **Create React App** é uma ferramenta oficial mantida pela equipe do React (e comunidade) que permite criar rapidamente a estrutura inicial de uma aplicação React sem a necessidade de configurar manualmente ferramentas complexas de compilação como o Webpack e o Babel.
+
+### Comando de Criação com NPX
+
+O comando recomendado para inicializar o projeto é:
+
+```bash
+npx create-react-app meu-primeiro-app
+```
+
+> **Por que usar `npx` em vez de `npm`?**  
+> O `npx` (*Node Package Execute*) executa a versão mais recente do utilitário `create-react-app` diretamente do registro do NPM sem exigir a instalação global permanente da ferramenta na máquina, evitando conflitos de versões desatualizadas.
+
+## Estrutura de Pastas de um Projeto React
+
+Ao criar um projeto com o CRA, a estrutura gerada é organizada da seguinte forma:
+
+```text
+meu-primeiro-app/
+├── node_modules/         # Bibliotecas e dependências instaladas
+├── public/               # Arquivos estáticos acessíveis diretamente pelo navegador
+│   ├── favicon.ico       # Ícone exibido na aba do navegador
+│   ├── index.html        # Único arquivo HTML da Single Page Application (SPA)
+│   ├── logo192.png       # Ícone para dispositivos móveis
+│   ├── manifest.json     # Metadados de configuração para PWA (Progressive Web App)
+│   └── robots.txt        # Instruções para rastreadores de mecanismos de busca
+├── src/                  # Código-fonte da aplicação (onde os desenvolvedores atuam)
+│   ├── App.css           # Estilos específicos do componente principal App
+│   ├── App.js            # Componente raiz da interface React
+│   ├── App.test.js       # Arquivo de testes unitários do componente App
+│   ├── index.css         # Estilos globais da aplicação
+│   ├── index.js          # Ponto de entrada JavaScript que renderiza o React no DOM
+│   ├── logo.svg          # Logotipo SVG padrão
+│   ├── reportWebVitals.js# Coleta de métricas de desempenho da aplicação
+│   └── setupTests.js     # Configuração do ambiente de testes (Jest / Testing Library)
+├── .gitignore            # Arquivos e pastas que não devem ser enviados ao Git
+├── package.json          # Metadados, scripts e dependências do projeto
+└── README.md             # Documentação introdutória do projeto
+```
+
+### Principais Arquivos em Detalhe
+
+- **`public/index.html`:** Contém a tag fundamental `<div id="root"></div>`. Em uma aplicação SPA (*Single Page Application*), o navegador carrega apenas esta página HTML, e todo o restante do conteúdo é injetado dinamicamente pelo JavaScript.
+- **`src/index.js`:** Importa a biblioteca `ReactDOM` e monta a árvore de componentes da aplicação dentro da `div#root` do HTML.
+- **`src/App.js`:** Componente funcional principal que define a estrutura visual inicial da aplicação.
+
+## Scripts Essenciais do Projeto
+
+No arquivo `package.json`, são definidos os comandos de terminal para operar o projeto:
+
+```bash
+# Inicia o servidor de desenvolvimento local na porta 3000 com live-reloading
+npm start
+
+# Executa os testes automatizados com o Jest em modo interativo
+npm test
+
+# Compila e otimiza a aplicação para produção na pasta build/
+npm run build
+```
+
+---
+
+# Deploy e Hospedagem com Vercel
+
+## O que é Deploy?
+
+O **Deploy** (ou implantação) é o processo de transferir, construir e disponibilizar uma aplicação desenvolvida no ambiente local para um servidor ou plataforma em nuvem acessível publicamente na internet por qualquer usuário final.
+
+## A Plataforma Vercel
+
+A **Vercel** é uma plataforma em nuvem pioneira, focada na experiência do desenvolvedor front-end e especializada na hospedagem de aplicações Jamstack, React, Next.js, Vue e sites estáticos.
+
+### Vantagens da Vercel
+
+- **Integração Contínua (CI/CD Automático):** Conecta-se diretamente aos repositórios do GitHub, GitLab ou Bitbucket. Cada comando `git push` enviado para a branch principal dispara automaticamente o processo de build e publicação de uma nova versão estável.
+- **Preview Deployments:** Cada Pull Request ou branch secundária ganha automaticamente uma URL de visualização isolada e segura para revisão em equipe antes do merge na branch principal.
+- **CDN Global de Alta Performance:** Distribui os arquivos estáticos compilados em dezenas de servidores ao redor do mundo (*Edge Network*), entregando o conteúdo com latência mínima ao usuário.
+- **Certificado SSL Gratuito:** Todo domínio e subdomínio (`.vercel.app`) recebe automaticamente criptografia HTTPS gerenciada sem custos adicionais.
+
+## Fluxo Completo de Deploy na Vercel
+
+1. **Repositório no GitHub:** Subir o código da aplicação React para um repositório remoto no GitHub (`git push -u origin main`).
+2. **Conexão com a Vercel:** Criar uma conta na [Vercel](https://vercel.com) e autenticar utilizando a conta do GitHub.
+3. **Importação do Projeto:** Clicar em **"Add New... → Project"** e selecionar o repositório desejado.
+4. **Configuração de Build:** A Vercel detecta automaticamente que se trata de um projeto React gerado com Create React App, pré-configurando os comandos de build (`npm run build`) e pasta de saída (`build/`).
+5. **Deploy:** Clicar em **"Deploy"**. Em questão de segundos, o build é finalizado e uma URL pública segura é gerada (exemplo: `https://meu-app-react.vercel.app`).
+
+---
+
+# Atividades Práticas da Aula 02
+
+## Atividade 01: Setup Completo de Ambiente, Criação do Projeto e Deploy
+
+A primeira atividade prática da aula consiste em consolidar a cadeia completa de desenvolvimento moderno:
+1. Instalar e verificar as ferramentas essenciais: Git, Node.js (LTS), NPM e VS Code com as extensões recomendadas.
+2. Configurar a identidade global do Git (`user.name` e `user.email`).
+3. Criar uma aplicação React utilizando o Create React App via terminal (`npx create-react-app ...`).
+4. Inicializar o versionamento do projeto, aplicando commits semânticos atômicos.
+5. Criar uma tag anotada no padrão SemVer (ex.: `git tag -a v1.0.0 -m "Release v1.0.0"`).
+6. Criar um repositório remoto no GitHub e sincronizar o código e as tags (`git push origin main` e `git push origin --tags`).
+7. Conectar o repositório à plataforma Vercel e realizar o primeiro deploy contínuo em produção.
+
+## Atividade 02: Relatório Técnico de Configuração de Ambiente
+
+A segunda atividade solicita a produção de um **relatório técnico estruturado (mínimo de 5 páginas)**, contendo:
+- **Capa e Sumário:** Identificação dos autores, disciplina e temas abordados.
+- **Fundamentação Teórica:** Conceito de versionamento de código, vantagens operacionais, comparação entre versionamento e backup, e detalhamento do padrão Semantic Versioning (SemVer: Major, Minor e Patch).
+- **Guia Passo a Passo das Ferramentas:** Instruções detalhadas com capturas de tela e comandos executados para instalação e configuração do VS Code, Git e Node.js/NPM.
+- **Desenvolvimento da Aplicação React:** Explicação da criação do projeto via CRA, detalhamento funcional da estrutura de arquivos e pastas (`public`, `src`, `package.json`) e comandos de execução.
+- **Processo de Deploy na Vercel:** Documentação com evidências visuais do fluxo de integração contínua (CI/CD) do GitHub com a Vercel e validação da URL pública no navegador.
+- **Conclusão e Referências Bibliográficas:** Avaliação sobre a importância da padronização e rastreabilidade no ciclo de vida de software moderno.
+
+---
+
+# Revisão Rápida da Aula 02
+
+- **Versionamento vs. Backup:** Backup é um retrato estático de segurança; versionamento é o histórico inteligente com autoria, datas e motivos de cada alteração.
+- **SemVer (MAJOR.MINOR.PATCH):**
+  - **MAJOR:** Quebra de compatibilidade com versões anteriores.
+  - **MINOR:** Adição de nova funcionalidade mantendo retrocompatibilidade.
+  - **PATCH:** Correção de falhas e bugs pontuais.
+- **VS Code:** Editor leve e extensível com ecossistema essencial para produtividade (Prettier, ESLint, GitLens).
+- **Tags no Git:** Marcadores estáticos para registrar releases oficiais (`git tag -a v1.0.0 -m "..."`).
+- **Node.js e NPM:** Runtime que permitiu rodar JS fora do navegador e o gerenciador de pacotes padrão que controla as dependências do ecossistema.
+- **Create React App:** Utilitário que gera a arquitetura base de uma aplicação React pronta para desenvolvimento com `npx create-react-app`.
+- **Vercel:** Hospedagem em nuvem com deploy contínuo acionado automaticamente a cada alteração no repositório GitHub.
