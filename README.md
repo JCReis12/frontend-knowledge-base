@@ -68,11 +68,14 @@ Repositórios dos projetos práticos desenvolvidos ao longo da matéria.
 | 07 | Aula 04 | `frontend-full-exemple-project` | [🔗 Repositório](https://github.com/JCReis12/frontend-full-exemple-project) | [🌐 Frontend Full Exemple Project](https://frontend-full-exemple-project.vercel.app/) | React / TypeScript / Vite |
 | 08 | Aula 04 | `backend-full-exemple-project` | [🔗 Repositório](https://github.com/JCReis12/backend-full-exemple-project) | [🌐 Backend Full Exemple Project](https://backend-full-exemple-project.onrender.com/) | Node.js / Express |
 | 09 | Aula 04 | [Pesquisa - Projetos com API](Aulas/Aula%2004%20-%20Consumindo%20APIs%20no%20front-end/Pesquisa%20-%20Projetos%20com%20API.md) | — | — | Pesquisa |
-| 10 | Aula 05 | `exemple-project-api-rest` | [🔗 Frontend](https://github.com/JCReis12/exemple-project-api-rest-frontend.git) · [🔗 Backend](https://github.com/JCReis12/exemple-project-api-rest-backend.git) | [🌐 Frontend](https://exemple-project-api-rest-frontend.vercel.app/) · [🌐 API](https://exemple-project-api-rest-backend.onrender.com) · [📄 Lista de notas](https://exemple-project-api-rest-backend.onrender.com/api/notes) | React / Node.js / Express |
-| 11 | Aula 05 | `exemple-project-api-rest-backend` | [🔗 Repositório](https://github.com/JCReis12/exemple-project-api-rest-backend.git) | [🌐 API pública](https://exemple-project-api-rest-backend.onrender.com) · [📄 Lista de notas](https://exemple-project-api-rest-backend.onrender.com/api/notes) | Node.js / Express |
-| 12 | Aula 06 | `Projeto Integrador` | [📄 Primeiros requisitos e organização](https://2rpnet-my.sharepoint.com/:x:/p/joao_junior/IQAVfcLito34QquhctpNVAPaAcvD_EJHTU2c5fPpm5AMNN8?e=iHIm4A) | — | Excel / Gestão de projetos |
-| 13 | Aula 07 | `aula-framework-css-atv` | [🔗 Repositório](https://github.com/JCReis12/aula-framework-css-atv.git) | — | Framework CSS |
-| 14 | Aula 08 — Revisão React | `frontend-components-study-screen` | [🔗 Repositório](https://github.com/JCReis12/frontend-components-study-screen) | [🌐 Frontend Components Study Screen](https://frontend-components-study-screen.vercel.app/) | React |
+| 10 | Aula 05 | `exemple-project-api-rest` | [🔗 Frontend](https://github.com/JCReis12/exemple-project-api-rest-frontend.git) | [🌐 Frontend](https://exemple-project-api-rest-frontend.vercel.app/) | React |
+| 11 | Aula 05 | `exemple-project-api-rest` | [🔗 Backend](https://github.com/JCReis12/exemple-project-api-rest-backend.git) | [🌐 API](https://exemple-project-api-rest-backend.onrender.com) | Node.js / Express |
+| 12 | Aula 05 | `exemple-project-api-rest` | [🔗 Backend](https://github.com/JCReis12/exemple-project-api-rest-backend.git) | [📄 Lista de notas](https://exemple-project-api-rest-backend.onrender.com/api/notes) | Node.js / Express |
+| 13 | Aula 05 | `exemple-project-api-rest-backend` | [🔗 Repositório](https://github.com/JCReis12/exemple-project-api-rest-backend.git) | [🌐 API pública](https://exemple-project-api-rest-backend.onrender.com) | Node.js / Express |
+| 14 | Aula 05 | `exemple-project-api-rest-backend` | [🔗 Repositório](https://github.com/JCReis12/exemple-project-api-rest-backend.git) | [📄 Lista de notas](https://exemple-project-api-rest-backend.onrender.com/api/notes) | Node.js / Express |
+| 15 | Aula 06 | `Projeto Integrador` | [📄 Primeiros requisitos e organização](https://2rpnet-my.sharepoint.com/:x:/p/joao_junior/IQAVfcLito34QquhctpNVAPaAcvD_EJHTU2c5fPpm5AMNN8?e=iHIm4A) | — | Excel / Gestão de projetos |
+| 16 | Aula 07 | `aula-framework-css-atv` | [🔗 Repositório](https://github.com/JCReis12/aula-framework-css-atv.git) | — | Framework CSS |
+| 17 | Aula 08 — Revisão React | `frontend-components-study-screen` | [🔗 Repositório](https://github.com/JCReis12/frontend-components-study-screen) | [🌐 Frontend Components Study Screen](https://frontend-components-study-screen.vercel.app/) | React |
 
 > Os links de deploy serão adicionados quando as aplicações estiverem publicadas online.
 
